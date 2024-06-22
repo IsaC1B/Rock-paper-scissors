@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="./index.js"></script>
+    <link rel="icon" href="img/dados-d20.svg" type="image/x-icon" />
+    <title>Rock Paper Scissors</title>
+  </head>
+
+  <body>
+    <header class="header">
+      <h1>Rock Paper Scissors</h1>
+      <div class="contenedor_tablero">
+        <h2 class="titulos_tablero">Player 1</h2>
+        <div id="puntos_jugador_1" class="puntos_jugadores_tablero">0</div>
+      </div>
+
+      <div class="contenedor_tablero">
+        <h2 class="titulos_tablero">Draws</h2>
+        <div>
+          <div
+            id="puntos_empate"
+            class="puntos_jugadores_tablero tablero_de_empate"
+          >
+            0
+          </div>
+        </div>
+      </div>
+
+      <div class="contenedor_tablero">
+        <h2 class="titulos_tablero">Player 2</h2>
+        <div id="puntos_jugador_2" class="puntos_jugadores_tablero">0</div>
+      </div>
+    </header>
+
+    <!-- <a class="boton_de_reiniciar" href="index.html">Reiniciar</a> -->
+
+    <div class="overlay">
+      <div class="pantalla_inicio">
+        <img class="logo" src="./img/dados-d20.svg" alt="logo" />
+        <div class="formulario_juego">
+          <label for="cantidad_intentos_input" id="label_cantidad_intentos">Ingrese cantidad de intentos</label>
+          <input id="cantidad_intentos_input" class="game_input marcador" />
+          <button
+            class="boton_jugar boton_persona"
+            onclick="onMenuButtonPlayWithPersonHandler()"
+          >
+            Jugar contra persona
+          </button>
+          <button
+            class="boton_jugar boton_maquina"
+            onclick="onMenuButtonPlayWithPcHandler()"
+          >
+            Jugar contra ordenador
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="overlay_end_game">
+      <div class="pantalla_final">
+        <h1>Fin del juego, el resultado es: </h1>
+        <strong id="resultado_del_juego"></strong>
+        <a class="play_again" href="index.html">Volver a jugar</a>
+      </div>
+    </div>
+
+    <main class="main">
+      <section class="pantalla_juego">
+        <div class="hand_player" id="hand_player_1">
+          <div class="hand_player rock " id="hidde_rock1">
+            <img
+              class="hand_player_1_rock"
+              src="./img/icon-rock.svg"
+              alt="imagen de piedra"
+            />
+          </div>
+          <div class="hand_player paper " id="hidde_paper1">
+            <img
+              class="hand_player_1_paper"
+              src="./img/icon-paper.svg"
+              alt="imagen de papel"
+            />
+          </div>
+          <div class="hand_player scissors " id="hidde_scissors1">
+            <img
+              class="hand_player_1_scissors"
+              src="./img/icon-scissors.svg"
+              alt="imagen de tijera"
+            />
+          </div>
+        </div>
+
+        <div class="hand_player" id="hand_player_2">
+          <div class="hand_player rock "  id="hidde_rock2">
+            <img
+              class="hand_player_2_rock rock"
+              src="./img/icon-rock.svg"
+              alt="imagen de piedra"
+            />
+          </div>
+          <div class="hand_player paper " id="hidde_paper2"> 
+            <img
+              class="hand_player_2_paper"
+              src="./img/icon-paper.svg"
+              alt="imagen de papel"
+            />
+          </div>
+          <div class="hand_player scissors " id="hidde_scissors2">
+            <img
+              class="hand_player_2_scissors"
+              src="./img/icon-scissors.svg"
+              alt="imagen de tijera"
+            />
+          </div>
+        </div>
+      </section>
+
+      <h2 class="select_an_option_text">Select an option</h2>
+      <section class="contenedor_juego">
+        <h3 class="player">Player 1</h3>
+        <div class="opciones_juego">
+          <button class="hand_player rock" onclick="presRockPlayer1()">
+            <img src="./img/icon-rock.svg" alt="imagen de piedra" />
+          </button>
+          <button class="hand_player paper" onclick="pressPaperPlayer1()">
+            <img src="./img/icon-paper.svg" alt="imagen de papel" />
+          </button>
+          <button class="hand_player scissors" onclick="pressScissorsPlayer1()">
+            <img src="./img/icon-scissors.svg" alt="imagen de tijera" />
+          </button>
+        </div>
+
+        <h3 class="player" id="player_2">Player 2</h3>
+        <div class="opciones_juego " id="opciones_juego2">
+          <button class="hand_player rock" onclick="pressRockPlayer2()">
+            <img src="./img/icon-rock.svg" alt="imagen de piedra" />
+          </button>
+          <button class="hand_player paper" onclick="pressPaperPlayer2()">
+            <img src="./img/icon-paper.svg" alt="imagen de papel" />
+          </button>
+          <button class="hand_player scissors" onclick="pressScissorsPlayer2()">
+            <img src="./img/icon-scissors.svg" alt="imagen de tijera" />
+          </button>
+        </div>
+      </section>
+
+      <div>
+        <a class="play_again" href="index.html">
+          to reset
+        </a>
+      </div>
+    </main>
+  </body>
+</html>
